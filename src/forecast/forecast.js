@@ -11,12 +11,13 @@ let getForecast = (address,callback) => {
 		}
 
 		weather.getWeatherForLocation(coordinates.latitude,
-										coordinates.longitude,(err,forecast) => {
+										coordinates.longitude,(err,weather) => {
 			if(err){
 				callback(err);
 				return;
 			}
-			callback(undefined,address,forecast);
+
+			callback(undefined,{address : coordinates.address, weather : weather});
 		});
 	});
 };

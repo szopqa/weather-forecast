@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 8888;
 
 app.get('/',(req,res) => {
-	forecast.getForecast('Knurów',(err,address,forecast)=>{
+	forecast.getForecast('Knurów',(err,forecast)=>{
 		if(err){
 			res.send(err);
 		}else{
