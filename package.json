@@ -1,0 +1,19 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "**/*.test.js"
+  },
+  "author": "Michał Szopa",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.4"
+  },
+  "dependencies": {
+    "expect": "^1.20.2",
+    "request": "^2.81.0"
+  }
+}
