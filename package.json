@@ -12,6 +12,7 @@
   "devDependencies": {
     "expect": "^1.20.2",
     "express": "^4.15.4",
+    "live-server": "^1.2.0",
     "mocha": "^3.5.0",
     "supertest": "^3.0.0"
   },
