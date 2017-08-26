@@ -4,31 +4,39 @@
     <meta charset="UTF-8">
     <title>Weather app</title>
     <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <nav  class="navbar navbar-dark bg-primary">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/cloud.png" class="float-left" width="32" height="32" alt="">
+                <a class="navbar-brand" href="index.html">
+                    <span>
+                        <img src="./img/cloud.png" class="navbar-logo" width="32" height="32" alt="">
+                    </span>
+                    Weather APP
                 </a>
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="searchingArea">
         <div class="jumbotron">
-            <h3 class="text-center">Find by localization:</h3>
+            <div class="page-header text-center"><h2>Get weather forecast</h2></div>
             <form id="searchForm">
-                <input type="text" class="form-control" id="searchText" placeholder="Find localization"/>
+                <input type="text" class="form-control" id="searchText" placeholder="Show me weather in ...."/>
             </form>
         </div>
     </div>
 
+    <div class="container" id="#main-forecast-area">
+        <div class="text-center" id="localization"></div>
+        <div class="text-center" id="weekly-summary"></div>
+    </div>
+
     <div class="container">
-        <div class="row" id="forecasts"></div>
+        <div class="row seven-cols" id="forecasts"></div>
     </div>
 
     <script
@@ -38,5 +46,6 @@
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/utils/converter.js"></script>
 </body>
 </html>
