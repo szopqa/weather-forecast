@@ -34,7 +34,6 @@ function getLocationName(result) {
 
 
 function getSummaryForWeek(dailyForecast) {
-	console.log(dailyForecast);
 	summary = `
 		<div class="container allign-center">
 			<h5 class="text-center">
@@ -46,31 +45,27 @@ function getSummaryForWeek(dailyForecast) {
 	$('#weekly-summary').html(summary);
 }
 
-
 function getForecastForSingleDays(dailyForecast) {
 	let outForecast ='';
-	$.each(dailyForecast.data,(index,forecast)=>{
-		console.log(forecast.summary);
-		outForecast +=`
-			<div class="col-sm-3 col-md-3">
-    			<div class="well text-center">
-    				<h4>${forecast.summary}</h4>
-    				<h5>
-    					Temperatures from ${TempToCelsius(forecast.temperatureMin)} to ${TempToCelsius(forecast.temperatureMax)}
-    				</h5>			
-    			</div>	
-  			</div>
-		`;
 
-		/*outForecast += `
-					<div class="col-lg-1 col-md-3 col-sm-4 col-xs-6">
+	$.each(dailyForecast.data,(index,forecast)=>{
+		setTimeout(()=>{
+				outForecast =`
+					<div class="col-sm-3 col-md-3">
 						<div class="well text-center">
-							<h5>${forecast.summary}</h5>
+							<h4>${forecast.summary}</h4>
+							<img src="../img/weather-icons/${forecast.icon}.png">
+							<h5>
+								Temperatures from <br>
+								${TempToCelsius(forecast.temperatureMin)} °C to ${TempToCelsius(forecast.temperatureMax)} °C
+							</h5>			
 						</div>	
 					</div>
-				`;
-				*/
-	});
+			`;
 
-	$('#forecasts').html(outForecast);
+			$('#forecasts').append(outForecast).slideDown(()=>{});
+
+		},80*index);
+	})
+
 }
