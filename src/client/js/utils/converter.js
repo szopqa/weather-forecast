@@ -1,4 +1,7 @@
-let extractFahrenheitFromSummary = (summary) => {
+/*
+Function changing summary given with temp in Fahrenheit into Celsius
+*/
+ extractFahrenheitFromSummary = (summary) => {
 
 	const regex = /^(.+?)(\d+)(°)(\w)(.*)/gm;
 
@@ -35,4 +38,9 @@ let TempToCelsius = (tempInFahrenheit) => {
 	let tempInCels = (tempInFahrenheit - 32)/(1.8);
 
 	return tempInCels.toFixed(2);
+};
+
+module.exports = {
+	extractFahrenheitFromSummary,
+	TempToCelsius
 };
